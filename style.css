@@ -6,7 +6,7 @@ body {
     color: #333333;
     background-color: #f4f6f8;
     margin: 0;
-    line-height: 1.6;
+    padding: 0;
 }
 
 /* =====================================================
@@ -14,15 +14,18 @@ body {
    ===================================================== */
 header {
     background-color: #1f2937;
-    padding: 1rem 2rem;
+    padding: 15px 20px;
 }
 
 header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    gap: 1.5rem;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 20px;
 }
 
 /* Selector combinado: enlaces del header → azul claro */
@@ -34,29 +37,20 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #93c5fd;
+    text-decoration: underline;
 }
 
 /* =====================================================
-   3. LAYOUT PRINCIPAL
+   3. LAYOUT PRINCIPAL (sin flexbox)
    ===================================================== */
 .contenedor {
-    display: flex;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
 }
 
 main {
-    flex: 3;
-}
-
-aside {
-    flex: 1;
-    background-color: #e5e7eb;
-    padding: 1rem;
-    border-radius: 8px;
-    height: fit-content;
+    margin-bottom: 30px;
 }
 
 /* =====================================================
@@ -65,10 +59,8 @@ aside {
 article {
     background-color: #ffffff;
     border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin-bottom: 15px;
 }
 
 article h2 {
@@ -79,19 +71,15 @@ article h2 {
 .precio {
     font-weight: bold;
     color: #059669;
-    font-size: 1.1rem;
 }
 
-/* =====================================================
-   5. BOTÓN DE COMPRA (usando SOLO clases)
-   ===================================================== */
+/* Botón de compra (solo clases) */
 .btn-comprar {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     background-color: #2563eb;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 6px;
     font-weight: bold;
 }
 
@@ -100,11 +88,18 @@ article h2 {
 }
 
 /* =====================================================
-   6. ASIDE — selectores combinados (verde)
+   5. ASIDE — selectores combinados (verde)
    ===================================================== */
+aside {
+    background-color: #e5e7eb;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 1px solid #d1d5db;
+}
+
 aside h2 {
-    color: #065f46;
     margin-top: 0;
+    color: #065f46;
 }
 
 aside ul {
@@ -112,11 +107,13 @@ aside ul {
     padding: 0;
 }
 
+aside ul li {
+    margin-bottom: 5px;
+}
+
 aside ul li a {
     color: #16a34a;
     text-decoration: none;
-    display: block;
-    padding: 0.25rem 0;
 }
 
 aside ul li a:hover {
@@ -125,23 +122,24 @@ aside ul li a:hover {
 }
 
 /* =====================================================
-   7. FOOTER — selectores combinados (gris)
+   6. FOOTER — selectores combinados (amarillo)
    ===================================================== */
 footer {
     background-color: #1f2937;
     color: #d1d5db;
     text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
+    padding: 20px;
 }
 
 footer ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
+    margin: 10px 0 0 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 10px;
 }
 
 footer ul li a {
