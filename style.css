@@ -1,87 +1,19 @@
-/* 1. HERENCIA: tipografía y color base */
+/* • Comprueba la Herencia: tipografía y color base en el body */
 body {
     font-family: sans-serif;
     color: #333333;
 }
 
-/* 2. HEADER */
-header {
-    background-color: #1f2937;
-    padding: 10px;
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-/* Selector combinado: enlaces del header → azul */
+/* • Aísla la pintura por zonas (Selectores Combinados) */
 header nav ul li a {
-    color: #60a5fa;
-    text-decoration: none;
-}
-
-/* 3. PRODUCTOS */
-article {
-    border: 1px solid #cccccc;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.precio {
-    font-weight: bold;
-    color: green;
-}
-
-/* Botón de compra (solo clases) */
-.btn-comprar {
-    background-color: blue;
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-}
-
-/* 4. ASIDE — selectores combinados → verde */
-aside {
-    background-color: #eeeeee;
-    padding: 10px;
-}
-
-aside ul {
-    list-style: none;
-    padding: 0;
+    color: blue; /* Color para el menú principal */
 }
 
 aside ul li a {
-    color: green;
-    text-decoration: none;
-}
-
-/* 5. FOOTER — selectores combinados → amarillo */
-footer {
-    background-color: #1f2937;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer ul li {
-    display: inline-block;
-    margin: 0 10px;
+    color: green; /* Color para el menú secundario */
 }
 
 footer ul li a {
-    color: yellow;
-    text-decoration: none;
+    color: gray; /* Color para las redes sociales */
 }
+

@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- Un encabezado <header> que aloje la barra de navegación <nav> con <ul>, <li> y <a> -->
     <header>
         <nav>
             <ul>
@@ -19,42 +19,47 @@
         </nav>
     </header>
 
-    <!-- MAIN -->
+    <!-- Cuerpo dividido semánticamente entre <main> y <aside> -->
     <main>
+        <!-- Sección que agrupa un mínimo de 4 productos -->
         <section>
             <h1>Catálogo de Productos</h1>
 
+            <!-- Producto 1 -->
             <article>
                 <h2>Audífonos Bluetooth</h2>
                 <p>Audífonos inalámbricos con cancelación de ruido.</p>
-                <p class="precio">$250.000</p>
+                <p>$250.000</p>
                 <a href="#" class="btn-comprar">Comprar</a>
             </article>
 
+            <!-- Producto 2 (Este tiene la clase y el ID para el conflicto) -->
             <article>
                 <h2>Teclado Mecánico RGB</h2>
                 <p>Teclado gamer con switches azules.</p>
-                <p class="precio">$320.000</p>
+                <p>$320.000</p>
                 <a href="#" class="btn-comprar" id="btn-destacado">Comprar</a>
             </article>
 
+            <!-- Producto 3 -->
             <article>
                 <h2>Mouse Inalámbrico</h2>
                 <p>Mouse ergonómico con sensor de alta precisión.</p>
-                <p class="precio">$120.000</p>
+                <p>$120.000</p>
                 <a href="#" class="btn-comprar">Comprar</a>
             </article>
 
+            <!-- Producto 4 -->
             <article>
                 <h2>Monitor 27" 4K</h2>
                 <p>Pantalla UHD con HDR10 y 144Hz.</p>
-                <p class="precio">$1.450.000</p>
+                <p>$1.450.000</p>
                 <a href="#" class="btn-comprar">Comprar</a>
             </article>
         </section>
     </main>
 
-    <!-- ASIDE -->
+    <!-- Barra lateral <aside> con su <h2> y menú secundario -->
     <aside>
         <h2>Filtros</h2>
         <ul>
@@ -65,7 +70,7 @@
         </ul>
     </aside>
 
-    <!-- FOOTER -->
+    <!-- Pie de página <footer> con derechos de autor y enlaces a redes -->
     <footer>
         <p>&copy; 2026 TechStore. Todos los derechos reservados.</p>
         <ul>
