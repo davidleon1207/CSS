@@ -12,7 +12,7 @@ body {
 
 /* 2. Separar áreas principales */
 header {
-    background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000');
+    background-image: url('img/fondo.jpg');
     background-size: cover;
     background-position: center;
     padding: 20px;
@@ -21,17 +21,13 @@ header {
 main {
     background-color: #f0f4f8; 
     padding: 20px;
-    /* Volvemos a la normalidad el main */
-    display: block; 
-    width: 100%;
+    /* Obligamos al main a contener a los artículos flotantes */
+    overflow: hidden; 
 }
 
 aside {
     background-color: #e2e8f0; 
     padding: 20px;
-    /* Volvemos a la normalidad el aside */
-    display: block;
-    width: 100%;
 }
 
 footer {
@@ -40,17 +36,18 @@ footer {
     padding: 20px;
 }
 
-/* 🌟 AQUÍ ESTÁ LA MAGIA PARA LAS TARJETAS DE PRODUCTOS 🌟 */
 article {
     background-color: white;
     padding: 20px;
-    margin: 15px 0;
-    
-    /* Los ponemos en línea y le damos un ancho para que quepan 2 o 3 por fila */
-    display: inline-block; 
-    width: 48%; /* Ocupa casi la mitad de la pantalla */
-    vertical-align: top; /* Para que se alineen desde arriba */
-    margin: 1%; /* Separación entre tarjetas */
+    margin: 1%; /* Separación entre ellos */
+    display: inline-block; /* Para que se pongan al lado */
+    width: 48%; /* Para que quepan 2 en la misma línea */
+    vertical-align: top; /* Para que no se desalineen si uno es más alto */
+}
+
+/* Quitamos el margen derecho a la última tarjeta para que quede perfecta */
+article:last-child {
+    margin-right: 0;
 }
 
 /* 4. Estilos base (menús, precios, botones) */
