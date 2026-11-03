@@ -31,3 +31,14 @@ reglas tuvieran el mismo peso.
 /* DEMO TEMPORAL */
 #btn-destacado { background-color: red; }
 .btn-comprar   { background-color: orange; }
+
+## Hallazgos: El Modelo de Caja
+
+**1. Diferencia práctica entre Margin y Padding:**
+El `padding` es el espacio "interno" de la caja (el oxígeno que separa el texto del borde de su propia tarjeta). El `margin` es el espacio "externo" (el campo de fuerza que empuja otras cajas lejos de ella). Si le pongo color de fondo a una caja, el `padding` se pinta de ese color; el `margin` siempre es transparente.
+
+**2. ¿Por qué es obligatorio usar box-sizing: border-box?**
+Porque por defecto, el navegador suma el ancho del `padding` y los bordes al ancho total del elemento. Si tengo un div de `width: 100%` y le agrego `padding: 20px`, el div se desborda de la pantalla. Con `border-box`, le decimos al navegador: *"si mido 100px, esos 100px incluyen todo (contenido, padding y borde)"*, evitando que la estructura se rompa.
+
+**3. ¿Cómo afecta un margen grande a los hermanos?**
+Si tengo dos tarjetas (hermanos) una debajo de la otra y le aplico un `margin-bottom: 50px` a la primera, esta empujará a la segunda tarjeta 50px hacia abajo. Si ambas tienen márgenes, los márgenes se "fusionan" (Margin Collapse) y se toma el valor más grande, no la suma de ambos.

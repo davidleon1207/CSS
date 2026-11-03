@@ -1,19 +1,110 @@
-/* • Comprueba la Herencia: tipografía y color base en el body */
+/* 1. Neutralizar matemáticas del navegador */
+* {
+    box-sizing: border-box;
+}
+
+/* Herencia base */
 body {
     font-family: sans-serif;
     color: #333333;
+    margin: 0;
 }
 
-/* • Aísla la pintura por zonas (Selectores Combinados) */
+/* 2. Separar áreas principales */
+header {
+    background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+main {
+    background-color: #f0f4f8; 
+    padding: 20px;
+    /* Volvemos a la normalidad el main */
+    display: block; 
+    width: 100%;
+}
+
+aside {
+    background-color: #e2e8f0; 
+    padding: 20px;
+    /* Volvemos a la normalidad el aside */
+    display: block;
+    width: 100%;
+}
+
+footer {
+    background-color: #1f2937; 
+    color: white;
+    padding: 20px;
+}
+
+/* 🌟 AQUÍ ESTÁ LA MAGIA PARA LAS TARJETAS DE PRODUCTOS 🌟 */
+article {
+    background-color: white;
+    padding: 20px;
+    margin: 15px 0;
+    
+    /* Los ponemos en línea y le damos un ancho para que quepan 2 o 3 por fila */
+    display: inline-block; 
+    width: 48%; /* Ocupa casi la mitad de la pantalla */
+    vertical-align: top; /* Para que se alineen desde arriba */
+    margin: 1%; /* Separación entre tarjetas */
+}
+
+/* 4. Estilos base (menús, precios, botones) */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
 header nav ul li a {
-    color: blue; /* Color para el menú principal */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.precio {
+    font-weight: bold;
+    color: green;
+}
+
+.btn-comprar {
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
 }
 
 aside ul li a {
-    color: green; /* Color para el menú secundario */
+    color: green;
+    text-decoration: none;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 15px;
 }
 
 footer ul li a {
-    color: gray; /* Color para las redes sociales */
+    color: yellow;
+    text-decoration: none;
 }
-
