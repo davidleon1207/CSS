@@ -3,10 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Productos</title>
+    <title>Catálogo de Productos | TechStore</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Mi Catálogo de Productos</h1>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= CUERPO PRINCIPAL ================= -->
+    <div class="contenedor">
+
+        <!-- Zona central: listado de productos -->
+        <main>
+            <section>
+                <h1>Catálogo de Productos</h1>
+
+                <!-- Producto 1 -->
+                <article>
+                    <h2>Audífonos Bluetooth</h2>
+                    <p>Audífonos inalámbricos con cancelación de ruido y 30h de batería.</p>
+                    <p class="precio">$250.000</p>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </article>
+
+                <!-- Producto 2 (este será el destacado) -->
+                <article>
+                    <h2>Teclado Mecánico RGB</h2>
+                    <p>Teclado gamer con switches azules y retroiluminación personalizable.</p>
+                    <p class="precio">$320.000</p>
+                    <a href="#" class="btn-comprar" id="btn-destacado">Comprar</a>
+                </article>
+
+                <!-- Producto 3 -->
+                <article>
+                    <h2>Mouse Inalámbrico</h2>
+                    <p>Mouse ergonómico con sensor de alta precisión y conexión USB-C.</p>
+                    <p class="precio">$120.000</p>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </article>
+
+                <!-- Producto 4 -->
+                <article>
+                    <h2>Monitor 27" 4K</h2>
+                    <p>Pantalla UHD con HDR10 y frecuencia de 144Hz para diseño y gaming.</p>
+                    <p class="precio">$1.450.000</p>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </article>
+
+            </section>
+        </main>
+
+        <!-- Barra lateral: filtros -->
+        <aside>
+            <h2>Filtros</h2>
+            <ul>
+                <li><a href="#audio">Audio</a></li>
+                <li><a href="#perifericos">Periféricos</a></li>
+                <li><a href="#pantallas">Pantallas</a></li>
+                <li><a href="#accesorios">Accesorios</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>&copy; 2026 TechStore. Todos los derechos reservados.</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+    </footer>
+
 </body>
 </html>
