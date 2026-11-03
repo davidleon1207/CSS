@@ -1,49 +1,33 @@
-# 🛒 Catálogo de Productos — Jerarquía CSS
+# Catálogo de Productos — Jerarquía CSS
 
-Proyecto de la **Subactividad 1: Estructurar la jerarquía de estilos**  
-Programa: Análisis y Desarrollo de Software  
-Ficha: 3381732 
-Instructor: John Freddy Becerra Castellanos  
-Aprendiz: Juan David León
+Subactividad 1: Estructurar la jerarquía de estilos (Selectores, herencia, cascada y especificidad).
 
----
+## Cálculo de Especificidad
 
-## 📖 Descripción
-
-Página estática que simula un catálogo de productos tecnológicos.  
-El objetivo es demostrar el dominio de los conceptos fundamentales de CSS:
-
-- Herencia
-- Cascada
-- Especificidad
-- Selectores combinados (etiqueta, clase, descendencia)
-
----
-
-## 🧮 Cálculo de Especificidad
-
-Cada selector CSS tiene un "peso" que determina qué regla gana cuando dos o más apuntan al mismo elemento.
-
-| Tipo de selector | Peso      | Ejemplo           |
-|------------------|-----------|-------------------|
-| Etiqueta         | 1 punto   | `p`, `a`, `h2`    |
-| Clase            | 10 puntos | `.btn-comprar`    |
-| ID               | 100 puntos| `#btn-destacado`  |
+| Selector | Peso | Puntos |
+|----------|------|--------|
+| Etiqueta (`p`, `a`, `h2`) | 1 | 1 pt |
+| Clase (`.btn-comprar`) | 10 | 10 pts |
+| ID (`#btn-destacado`) | 100 | 100 pts |
 
 ### Ejemplos del proyecto
 
-| Selector                   | Cálculo                    | Total |
-|----------------------------|----------------------------|-------|
-| `p`                        | 1                          | 1     |
-| `article p`                | 1 + 1                      | 2     |
-| `.precio`                  | 10                         | 10    |
-| `header nav ul li a`       | 1+1+1+1+1                  | 5     |
-| `.btn-comprar`             | 10                         | 10    |
-| `#btn-destacado`           | 100                        | 100   |
+| Selector | Cálculo | Total |
+|----------|---------|-------|
+| `p` | 1 | 1 |
+| `.precio` | 10 | 10 |
+| `header nav ul li a` | 1+1+1+1+1 | 5 |
+| `.btn-comprar` | 10 | 10 |
+| `#btn-destacado` | 100 | 100 |
 
-### 🔥 Conflicto Cascada vs Especificidad
+## Conflicto Cascada vs Especificidad
 
-En la prueba se aplicó al enlace del segundo producto:
+Se aplicó a un enlace: `class="btn-comprar"` e `id="btn-destacado"`.
 
-```html
-<a href="#" class="btn-comprar" id="btn-destacado">Comprar</a>
+En el CSS se declaró primero el ID (rojo, 100 pts) y luego la clase (naranja, 10 pts).
+En pantalla el enlace se ve ROJO, demostrando que el ID aplasta a la clase
+aunque la clase esté escrita después. La cascada solo habría ganado si ambas
+reglas tuvieran el mismo peso.
+/* DEMO TEMPORAL */
+#btn-destacado { background-color: red; }
+.btn-comprar   { background-color: orange; }
