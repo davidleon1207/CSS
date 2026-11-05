@@ -42,3 +42,16 @@ Porque por defecto, el navegador suma el ancho del `padding` y los bordes al anc
 
 **3. ¿Cómo afecta un margen grande a los hermanos?**
 Si tengo dos tarjetas (hermanos) una debajo de la otra y le aplico un `margin-bottom: 50px` a la primera, esta empujará a la segunda tarjeta 50px hacia abajo. Si ambas tienen márgenes, los márgenes se "fusionan" (Margin Collapse) y se toma el valor más grande, no la suma de ambos.
+
+## Hallazgos: Centralización de Identidad Visual y Espaciado
+
+**(1) Lista completa de variables declaradas:**
+* **Colores:** `--color-texto`, `--color-fondo-main`, `--color-fondo-aside`, `--color-fondo-footer`, `--color-blanco`, `--color-precio`, `--color-boton`, `--color-enlaces-footer`.
+* **Tipografía:** `--fuente-principal` (Poppins).
+* **Espaciados:** `--espaciado-caja` (20px), `--espaciado-menus` (15px), `--espaciado-boton` (5px 10px).
+
+**(2) Ventaja de reutilizar medidas de margen y relleno:**
+Antes de usar variables, si quería cambiar el aire de las tarjetas, tenía que modificar el `padding` en varias reglas. Ahora, al tener `--espaciado-caja: 20px`, puedo cambiar el diseño de todo el catálogo (header, tarjetas, aside, footer) modificando únicamente esa variable en la central `:root`. Esto asegura una proporción uniforme en toda la pantalla.
+
+**(3) ¿Cómo previene colisiones visuales la centralización en `:root`?**
+Porque elimina la "deuda técnica". Al no repetir valores hexadecimales (como `#1f2937`) o medidas (como `20px`) por todo el archivo, evito errores de tipeo. A medida que la hoja de estilos crece y se agregan más páginas, la centralización garantiza que todos los elementos compartan exactamente los mismos colores y medidas, sin que queden "parches" con estilos antiguos.

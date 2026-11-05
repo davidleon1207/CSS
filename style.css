@@ -1,56 +1,77 @@
-/* 1. Neutralizar matemáticas del navegador */
+/* =====================================================
+   1. CENTRAL DE MANDO: CUSTOM PROPERTIES
+   ===================================================== */
+:root {
+    /* Variables de Color */
+    --color-texto: #333333;
+    --color-fondo-main: #f0f4f8;
+    --color-fondo-aside: #e2e8f0;
+    --color-fondo-footer: #1f2937;
+    --color-blanco: white;
+    --color-precio: green;
+    --color-boton: blue;
+    --color-enlaces-footer: yellow;
+
+    /* Variable de Tipografía */
+    --fuente-principal: 'Poppins', sans-serif;
+
+    /* Variables de Espaciado (Box Model) */
+    --espaciado-caja: 20px;     /* Para paddings de secciones y tarjetas */
+    --espaciado-menus: 15px;    /* Para separar los enlaces de los menús */
+    --espaciado-boton: 5px 10px;/* Para el relleno del botón comprar */
+}
+
+
 * {
     box-sizing: border-box;
 }
 
-/* Herencia base */
 body {
-    font-family: sans-serif;
-    color: #333333;
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
     margin: 0;
 }
 
-/* 2. Separar áreas principales */
+
 header {
     background-image: url('img/fondo.jpg');
     background-size: cover;
     background-position: center;
-    padding: 20px;
+    padding: var(--espaciado-caja);
 }
 
 main {
-    background-color: #f0f4f8; 
-    padding: 20px;
-    /* Obligamos al main a contener a los artículos flotantes */
+    background-color: var(--color-fondo-main); 
+    padding: var(--espaciado-caja);
     overflow: hidden; 
 }
 
 aside {
-    background-color: #e2e8f0; 
-    padding: 20px;
+    background-color: var(--color-fondo-aside); 
+    padding: var(--espaciado-caja);
 }
 
 footer {
-    background-color: #1f2937; 
-    color: white;
-    padding: 20px;
+    background-color: var(--color-fondo-footer); 
+    color: var(--color-blanco);
+    padding: var(--espaciado-caja);
 }
+
 
 article {
-    background-color: white;
-    padding: 20px;
-    margin: 1%; /* Separación entre ellos */
-    display: inline-block; /* Para que se pongan al lado */
-    width: 48%; /* Para que quepan 2 en la misma línea */
-    vertical-align: top; /* Para que no se desalineen si uno es más alto */
+    background-color: var(--color-blanco);
+    padding: var(--espaciado-caja);
+    margin: 1%; 
+    display: inline-block; 
+    width: 48%; 
+    vertical-align: top; 
 }
 
-/* Quitamos el margen derecho a la última tarjeta para que quede perfecta */
 article:last-child {
     margin-right: 0;
 }
 
-/* 4. Estilos base (menús, precios, botones) */
+
 header nav ul {
     list-style: none;
     margin: 0;
@@ -59,24 +80,24 @@ header nav ul {
 
 header nav ul li {
     display: inline-block;
-    margin-right: 15px;
+    margin-right: var(--espaciado-menus);
 }
 
 header nav ul li a {
-    color: white;
+    color: var(--color-blanco);
     text-decoration: none;
     font-weight: bold;
 }
 
 .precio {
     font-weight: bold;
-    color: green;
+    color: var(--color-precio);
 }
 
 .btn-comprar {
-    background-color: blue;
-    color: white;
-    padding: 5px 10px;
+    background-color: var(--color-boton);
+    color: var(--color-blanco);
+    padding: var(--espaciado-boton);
     text-decoration: none;
     display: inline-block;
 }
@@ -87,7 +108,7 @@ aside ul {
 }
 
 aside ul li a {
-    color: green;
+    color: var(--color-precio);
     text-decoration: none;
 }
 
@@ -98,10 +119,10 @@ footer ul {
 
 footer ul li {
     display: inline-block;
-    margin-right: 15px;
+    margin-right: var(--espaciado-menus);
 }
 
 footer ul li a {
-    color: yellow;
+    color: var(--color-enlaces-footer);
     text-decoration: none;
 }
