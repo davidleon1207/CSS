@@ -55,3 +55,14 @@ Antes de usar variables, si quería cambiar el aire de las tarjetas, tenía que 
 
 **(3) ¿Cómo previene colisiones visuales la centralización en `:root`?**
 Porque elimina la "deuda técnica". Al no repetir valores hexadecimales (como `#1f2937`) o medidas (como `20px`) por todo el archivo, evito errores de tipeo. A medida que la hoja de estilos crece y se agregan más páginas, la centralización garantiza que todos los elementos compartan exactamente los mismos colores y medidas, sin que queden "parches" con estilos antiguos.
+
+## Hallazgos: Pseudoclases y Pseudoelementos
+
+**(1) Diferencia funcional entre una pseudoclase y un pseudoelemento:**
+Las **pseudoclases** (como `:hover`, `:active`, `:focus`) se usan para aplicar estilos a un elemento basándose en un **estado o evento** (cuando el usuario pasa el ratón, hace clic o navega con el teclado). Los **pseudoelementos** (como `::before` o `::after`) se usan para **inyectar contenido decorativo** (textos, iconos, líneas) en el DOM virtual, sin necesidad de escribir etiquetas HTML extra.
+
+**(2) Importancia técnica de la pseudoclase `:focus`:**
+Es vital para la **accesibilidad web**. Las personas que no usan ratón (por discapacidad motriz o preferencia) navegan usando la tecla `Tab`. El `:focus` con un `outline` visible les indica claramente en qué enlace o botón están posicionados, permitiéndoles navegar por el sitio sin perderse.
+
+**(3) ¿Por qué inyectar decoraciones desde CSS (::before/::after)?**
+Porque mantiene el HTML **semántico y limpio**. Si quisiéramos poner la etiqueta de "¡Oferta!" en el HTML, tendríamos que añadir un `<span>` vacío o extra en cada producto, lo cual ensucia el código. Al hacerlo con CSS, la etiqueta es puramente visual: si el día de mañana decidimos quitarla, solo borramos 8 líneas de CSS y el HTML queda intacto. Además, los lectores de pantalla para personas ciegas no leen los pseudoelementos, evitando que digan "Oferta" 4 veces seguidas.

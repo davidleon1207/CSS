@@ -12,6 +12,9 @@
     --color-boton: blue;
     --color-enlaces-footer: yellow;
 
+    --color-secundario: #1f2937;
+    --color-primario: blue;
+
     /* Variable de Tipografía */
     --fuente-principal: 'Poppins', sans-serif;
 
@@ -95,11 +98,20 @@ header nav ul li a {
 }
 
 .btn-comprar {
-    background-color: var(--color-boton);
+    background-color: var(--color-primario);
     color: var(--color-blanco);
     padding: var(--espaciado-boton);
     text-decoration: none;
     display: inline-block;
+    transition: background-color 0.4s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-comprar:active{
+  transform: translateY(2px);
 }
 
 aside ul {
@@ -110,6 +122,24 @@ aside ul {
 aside ul li a {
     color: var(--color-precio);
     text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+aside ul li a::before{
+  content: ". ";
+  font-weight: bold;
+}
+
+aside ul li a:hover{
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+}
+
+aside ul li a:focus{
+  outline: 3px solid var(--color-secundario);
+  outline-offset: 2px
 }
 
 footer ul {
@@ -125,4 +155,35 @@ footer ul li {
 footer ul li a {
     color: var(--color-enlaces-footer);
     text-decoration: none;
+}
+
+article h2::after{
+  content: "Oferta!";
+  background-color: var(--color-precio);
+  color: var(--color-blanco);
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+
+article img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background-color: #f9f9f9; 
+    margin-bottom: var(--espaciado-caja); 
+    border-radius: 4px;
 }
