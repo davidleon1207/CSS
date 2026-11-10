@@ -1,0 +1,27 @@
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li a {
+    color: var(--color-precio);
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+aside ul li a::before {
+    content: ". ";
+    font-weight: bold;
+}
+
+aside ul li a:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+aside ul li a:focus {
+    outline: 3px solid var(--color-secundario);
+    outline-offset: 2px;
+}

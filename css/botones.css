@@ -1,0 +1,21 @@
+.btn {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: var(--espaciado-boton);
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.4s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+/* Modificador BEM para botón secundario */
+.btn--secundario {
+    background-color: var(--color-precio);
+}
