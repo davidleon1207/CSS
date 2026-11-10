@@ -1,5 +1,12 @@
 /* =====================================================
-   1. CENTRAL DE MANDO: CUSTOM PROPERTIES
+   1. IMPORTACIÓN DE MÓDULOS
+   ===================================================== */
+@import url('css/tarjeta.css');
+@import url('css/botones.css');
+@import url('css/menu-lateral.css');
+
+/* =====================================================
+   2. CENTRAL DE MANDO: CUSTOM PROPERTIES
    ===================================================== */
 :root {
     /* Variables de Color */
@@ -23,13 +30,6 @@
     --espaciado-menus: 15px;
     --espaciado-boton: 5px 10px;
 }
-
-/* =====================================================
-   2. IMPORTACIÓN DE MÓDULOS (SUBACTIVIDAD 5)
-   ===================================================== */
-@import url('css/tarjeta.css');
-@import url('css/botones.css');
-@import url('css/menu-lateral.css');
 
 /* =====================================================
    3. ESTILOS BASE Y ESTRUCTURA
