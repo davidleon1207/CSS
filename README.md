@@ -66,3 +66,17 @@ Es vital para la **accesibilidad web**. Las personas que no usan ratón (por dis
 
 **(3) ¿Por qué inyectar decoraciones desde CSS (::before/::after)?**
 Porque mantiene el HTML **semántico y limpio**. Si quisiéramos poner la etiqueta de "¡Oferta!" en el HTML, tendríamos que añadir un `<span>` vacío o extra en cada producto, lo cual ensucia el código. Al hacerlo con CSS, la etiqueta es puramente visual: si el día de mañana decidimos quitarla, solo borramos 8 líneas de CSS y el HTML queda intacto. Además, los lectores de pantalla para personas ciegas no leen los pseudoelementos, evitando que digan "Oferta" 4 veces seguidas.
+
+## Hallazgos: Arquitectura BEM y Modularidad
+
+**(1) ¿Qué significa BEM y cómo se escribe?**
+BEM son las siglas de **Bloque, Elemento, Modificador**. Es una metodología para nombrar clases CSS. Se escribe así:
+*   **Bloque:** El componente principal (ej. `.card`). Se usa una sola palabra.
+*   **Elemento:** Una parte del bloque (ej. `.card__title`). Se une con doble guion bajo (`__`).
+*   **Modificador:** Una variación del bloque o elemento (ej. `.card--destacada`). Se une con doble guion medio (`--`).
+
+**(2) ¿Por qué dividir el CSS en varios archivos facilita el trabajo colaborativo?**
+Porque si dos programadores están trabajando al mismo tiempo, uno puede estar editando `botones.css` mientras el otro edita `menu-lateral.css` sin que se generen conflictos en Git. Además, si hay un error en el diseño de las tarjetas, sabemos exactamente en qué archivo buscar sin tener que leer un documento de 1000 líneas.
+
+**(3) ¿Cómo evita BEM la guerra de especificidad?**
+BEM aplana el nivel de especificidad (peso 10) al usar casi exclusivamente **una sola clase** para seleccionar los elementos. Al eliminar selectores anidados complejos como `main section article h2`, evitamos que unas reglas pisen a otras por accidente. Si un estilo no se aplica, es fácil rastrearlo porque todo se maneja bajo el mismo nivel de peso.
