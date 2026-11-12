@@ -14,7 +14,6 @@
 
         <!-- HEADER -->
         <header>
-            <!-- Agregamos un logo para que justify-content: space-between haga su magia -->
             <div class="logo">TechStore</div>
             <nav>
                 <ul class="nav__list">
@@ -26,62 +25,72 @@
             </nav>
         </header>
 
-        <!-- CONTENEDOR CENTRAL (Main y Aside lado a lado) -->
+        <!-- CONTENEDOR CENTRAL -->
         <div class="main-wrapper">
             
             <!-- MAIN -->
             <main>
                 <section>
-                    <h1>Catálogo de Productos</h1>
+                    <!-- TÍTULO EN SU PROPIA CAJA -->
+                    <h1 class="catalog-title">Catálogo de Productos</h1>
 
-                    <!-- PRODUCTO 1 -->
-                    <article class="card">
-                        <h2 class="card__title">Audífonos Bluetooth</h2>
-                        <img class="card__image" src="img/audifono.avif" alt="Audífonos Bluetooth">
-                        <div class="card__body">
-                            <p>Audífonos inalámbricos con cancelación de ruido.</p>
-                        </div>
-                        <div class="card__price-wrapper">
-                            <p class="card__price">$250.000</p>
-                        </div>
-                        <a href="#" class="btn">Comprar</a>
-                    </article><!--
-                    --><article class="card card--destacada">
-                        <h2 class="card__title">Teclado Mecánico RGB</h2>
-                        <img class="card__image" src="img/teclado.avif" alt="Teclado Mecánico RGB">
-                        <div class="card__body">
-                            <p>Teclado gamer con switches azules.</p>
-                        </div>
-                        <!-- Ejemplo de precio de oferta junto a precio original -->
-                        <div class="card__price-wrapper">
-                            <p class="card__price">$320.000</p>
-                            <p class="card__price-old">$400.000</p>
-                        </div>
-                        <a href="#" class="btn btn--secundario">Comprar</a>
-                    </article><!--
-                    --><article class="card">
-                        <h2 class="card__title">Mouse Inalámbrico</h2>
-                        <img class="card__image" src="img/mouse.avif" alt="Mouse Inalámbrico">
-                        <div class="card__body">
-                            <p>Mouse ergonómico con sensor de alta precisión.</p>
-                        </div>
-                        <div class="card__price-wrapper">
-                            <p class="card__price">$120.000</p>
-                        </div>
-                        <a href="#" class="btn">Comprar</a>
-                    </article><!--
-                    --><article class="card">
-                        <h2 class="card__title">Monitor 27" 4K</h2>
-                        <img class="card__image" src="img/monitor.avif" alt="Monitor 4K">
-                        <div class="card__body">
-                            <p>Pantalla UHD con HDR10 y 144Hz.</p>
-                        </div>
-                        <div class="card__price-wrapper">
-                            <p class="card__price">$1.450.000</p>
-                        </div>
-                        <a href="#" class="btn">Comprar</a>
-                    </article>
+                    <!-- CUADRÍCULA DE PRODUCTOS -->
+                    <div class="catalog-grid">
+                        
+                        <!-- PRODUCTO 1 -->
+                        <article class="card">
+                            <h2 class="card__title">Audífonos Bluetooth</h2>
+                            <img class="card__image" src="img/audifono.avif" alt="Audífonos Bluetooth">
+                            <div class="card__body">
+                                <p>Audífonos inalámbricos con cancelación de ruido.</p>
+                            </div>
+                            <div class="card__price-wrapper">
+                                <p class="card__price">$250.000</p>
+                            </div>
+                            <a href="#" class="btn">Comprar</a>
+                        </article>
 
+                        <!-- PRODUCTO 2 -->
+                        <article class="card card--destacada">
+                            <h2 class="card__title">Teclado Mecánico RGB</h2>
+                            <img class="card__image" src="img/teclado.avif" alt="Teclado Mecánico RGB">
+                            <div class="card__body">
+                                <p>Teclado gamer con switches azules.</p>
+                            </div>
+                            <div class="card__price-wrapper">
+                                <p class="card__price">$320.000</p>
+                                <p class="card__price-old">$400.000</p>
+                            </div>
+                            <a href="#" class="btn btn--secundario">Comprar</a>
+                        </article>
+
+                        <!-- PRODUCTO 3 -->
+                        <article class="card">
+                            <h2 class="card__title">Mouse Inalámbrico</h2>
+                            <img class="card__image" src="img/mouse.avif" alt="Mouse Inalámbrico">
+                            <div class="card__body">
+                                <p>Mouse ergonómico con sensor de alta precisión.</p>
+                            </div>
+                            <div class="card__price-wrapper">
+                                <p class="card__price">$120.000</p>
+                            </div>
+                            <a href="#" class="btn">Comprar</a>
+                        </article>
+
+                        <!-- PRODUCTO 4 -->
+                        <article class="card">
+                            <h2 class="card__title">Monitor 27" 4K</h2>
+                            <img class="card__image" src="img/monitor.avif" alt="Monitor 4K">
+                            <div class="card__body">
+                                <p>Pantalla UHD con HDR10 y 144Hz.</p>
+                            </div>
+                            <div class="card__price-wrapper">
+                                <p class="card__price">$1.450.000</p>
+                            </div>
+                            <a href="#" class="btn">Comprar</a>
+                        </article>
+
+                    </div>
                 </section>
             </main>
 
@@ -96,7 +105,7 @@
                 </ul>
             </aside>
 
-        </div> <!-- FIN MAIN-WRAPPER -->
+        </div>
 
         <!-- FOOTER -->
         <footer>
