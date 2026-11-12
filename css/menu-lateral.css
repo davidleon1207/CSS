@@ -1,6 +1,22 @@
+aside {
+    background-color: var(--color-fondo-aside); 
+    padding: var(--espaciado-caja);
+    flex: 1; /* Le da 1 parte del ancho total al aside (menos que el main) */
+
+    /* Flexbox para Aside */
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-grande);
+}
+
+aside h2 {
+    margin: 0;
+}
+
 aside ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 aside ul li a {
@@ -11,17 +27,6 @@ aside ul li a {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-aside ul li a::before {
-    content: ". ";
-    font-weight: bold;
-}
-
-aside ul li a:hover {
-    background-color: var(--color-secundario);
-    color: var(--color-blanco);
-}
-
-aside ul li a:focus {
-    outline: 3px solid var(--color-secundario);
-    outline-offset: 2px;
-}
+aside ul li a::before { content: "• "; font-weight: bold; }
+aside ul li a:hover { background-color: var(--color-secundario); color: var(--color-blanco); }
+aside ul li a:focus { outline: 3px solid var(--color-secundario); outline-offset: 2px; }
