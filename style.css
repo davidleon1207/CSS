@@ -4,12 +4,13 @@
 @import url('css/tarjeta.css');
 @import url('css/botones.css');
 @import url('css/menu-lateral.css');
+@import url('css/header.css');
+@import url('css/footer.css');
 
 /* =====================================================
-   2. CENTRAL DE MANDO: CUSTOM PROPERTIES
+   2. CUSTOM PROPERTIES Y BASE
    ===================================================== */
 :root {
-    /* Variables de Color */
     --color-texto: #333333;
     --color-fondo-main: #f0f4f8;
     --color-fondo-aside: #e2e8f0;
@@ -18,25 +19,17 @@
     --color-precio: green;
     --color-boton: blue;
     --color-enlaces-footer: yellow;
-
     --color-secundario: #1f2937;
     --color-primario: blue;
-
-    /* Variable de Tipografía */
     --fuente-principal: 'Poppins', sans-serif;
-
-    /* Variables de Espaciado (Box Model) */
     --espaciado-caja: 20px;
     --espaciado-menus: 15px;
     --espaciado-boton: 5px 10px;
+    --espaciado-medio: 16px;
+    --espaciado-grande: 24px;
 }
 
-/* =====================================================
-   3. ESTILOS BASE Y ESTRUCTURA
-   ===================================================== */
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     font-family: var(--fuente-principal);
@@ -44,58 +37,20 @@ body {
     margin: 0;
 }
 
-header {
-    background-image: url('img/fondo.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: var(--espaciado-caja);
+/* LAYOUT GLOBAL (Flexbox) */
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    display: flex;
+    flex: 1;
 }
 
 main {
     background-color: var(--color-fondo-main); 
     padding: var(--espaciado-caja);
-    overflow: hidden; 
-}
-
-aside {
-    background-color: var(--color-fondo-aside); 
-    padding: var(--espaciado-caja);
-}
-
-footer {
-    background-color: var(--color-fondo-footer); 
-    color: var(--color-blanco);
-    padding: var(--espaciado-caja);
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin-right: var(--espaciado-menus);
-}
-
-header nav ul li a {
-    color: var(--color-blanco);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer ul li {
-    display: inline-block;
-    margin-right: var(--espaciado-menus);
-}
-
-footer ul li a {
-    color: var(--color-enlaces-footer);
-    text-decoration: none;
+    flex: 3;
 }
