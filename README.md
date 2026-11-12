@@ -80,3 +80,14 @@ Porque si dos programadores están trabajando al mismo tiempo, uno puede estar e
 
 **(3) ¿Cómo evita BEM la guerra de especificidad?**
 BEM aplana el nivel de especificidad (peso 10) al usar casi exclusivamente **una sola clase** para seleccionar los elementos. Al eliminar selectores anidados complejos como `main section article h2`, evitamos que unas reglas pisen a otras por accidente. Si un estilo no se aplica, es fácil rastrearlo porque todo se maneja bajo el mismo nivel de peso.
+
+## Hallazgos: Arquitectura Total con Flexbox
+
+**(1) ¿Por qué fue crucial `min-height: 100vh` y `flex-direction: column` en el `.app-layout`?**
+Porque `100vh` obliga al contenedor a medir exactamente el 100% de la altura de la ventana del navegador. Al combinarlo con `flex-direction: column`, creamos una columna donde el `header` y el `footer` toman el espacio que necesitan, y la propiedad `flex: 1` en el `.main-wrapper` hace que el contenido central "se estire" para ocupar todo el espacio sobrante. Esto garantiza que el pie de página siempre se quede pegado al fondo de la pantalla, incluso si hay pocos productos.
+
+**(2) ¿Cómo la propiedad `gap` reemplazó el uso de márgenes laterales?**
+Antes, para separar los enlaces del menú, teníamos que usar `margin-right` en cada `<li>` y luego borrar el margen del último elemento para que no se desalineara. Con Flexbox, `gap: 16px` aplica una separación matemática perfecta entre los hijos de un contenedor flexible, sin necesidad de tocar los márgenes individuales ni recurrir a pseudo-clases como `:last-child`.
+
+**(3) ¿Cómo BEM, Custom Properties y Flexbox crearon una tarjeta resistente?**
+La tarjeta ahora es un contenedor `display: flex; flex-direction: column;` con `height: 100%`. Al darle `flex-grow: 1` a la descripción (`.card__body`), le decimos al navegador: *"si a esta tarjeta le sobra espacio vertical porque el título de al lado es más corto, dale todo ese espacio a la descripción"*. Esto empuja el botón de compra hacia abajo, logrando que, sin importar cuánto texto tenga cada producto, todos los botones queden milimétricamente alineados en la misma línea horizontal.
