@@ -1,0 +1,23 @@
+footer {
+    background-color: var(--color-fondo-footer); 
+    color: var(--color-blanco);
+    padding: var(--espaciado-caja);
+
+    /* Flexbox para Footer */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--espaciado-medio);
+}
+
+footer ul li a {
+    color: var(--color-enlaces-footer);
+    text-decoration: none;
+}
