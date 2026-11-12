@@ -1,15 +1,21 @@
+/* Contenedor de las tarjetas */
+section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que bajen a la siguiente línea */
+    gap: 2%; /* Separación entre tarjetas */
+}
+
 .card {
     background-color: var(--color-blanco);
     padding: var(--espaciado-caja);
-    margin: 1%; 
-    display: inline-block; 
-    width: 48%; 
-    vertical-align: top; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    /* Le damos un ancho para que quepan 2 por fila */
+    width: 48%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:last-child {
-    margin-right: 0;
+    margin-bottom: 20px;
 }
 
 .card:hover {
@@ -38,7 +44,29 @@
     border-radius: 4px;
 }
 
+/* El resorte que empuja el botón hacia abajo */
+.card__body {
+    flex-grow: 1; 
+}
+
+/* Micro-flexbox para los precios */
+.card__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--espaciado-caja);
+}
+
 .card__price {
     font-weight: bold;
     color: var(--color-precio);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.card__price-old {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+    margin: 0;
 }
